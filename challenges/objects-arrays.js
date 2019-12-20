@@ -154,23 +154,35 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-function getLowerCase(zooAnimals) {
-  const lowCaseAnimalNames = [];
-  //.map animal names to lower case
-  zooAnimals.map(id => {
-    const { animal_name, scientific_name } = id
-    lowCaseAnimalNames.push(`${animal_name}, ${scientific_name}`)
-  })
-  return lowCaseAnimalNames;
-}
-console.log(lowCaseAnimalNames);
+// function getLowerCase(zooAnimals) {
+//   const lowCaseAnimalNames = [];
+//   //.map animal names to lower case
+//   zooAnimals.map(animal => {
+//     const {animal_name} = animal lowCaseAnimalNames.push(animal.animal_name.toLowerCase())
+
+//   return lowCaseAnimalNames;
+// }
+// console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
 
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals = [];
+
+function getLowPopAnimals(zooAnimals, population) {
+  const lowPopulationAnimals = [];
+  zooAnimals.filter((items) => {
+    const {population} = items
+    if(items.population < 5){
+      lowPopulationAnimals.push(population)
+    } else {
+      return;
+    }
+  })
+  return lowPopulationAnimals;
+}
+
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
@@ -190,3 +202,4 @@ console.log(populationTotal);
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
+}
