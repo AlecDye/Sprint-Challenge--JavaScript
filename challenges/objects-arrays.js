@@ -146,8 +146,6 @@ function getDisplayName(zooAnimals) {
   })
   return displayNames;
 }
-
-
 console.log(displayNames);
 
 /* Request 2: .map()
@@ -156,7 +154,15 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-const lowCaseAnimalNames = [];
+function getLowerCase(zooAnimals) {
+  const lowCaseAnimalNames = [];
+  //.map animal names to lower case
+  zooAnimals.map(id => {
+    const { animal_name, scientific_name } = id
+    lowCaseAnimalNames.push(`${animal_name}, ${scientific_name}`)
+  })
+  return lowCaseAnimalNames;
+}
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 

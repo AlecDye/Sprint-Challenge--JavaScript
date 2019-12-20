@@ -10,7 +10,7 @@ function CuboidMaker(attributes) {
   this.newLength = attributes.length,
   this.newWidth = attributes.width,
   this.newHeight = attributes.height
-}
+};
 
 
 /* == Step 2: Volume Method ==
@@ -20,10 +20,7 @@ function CuboidMaker(attributes) {
 */
 
 CuboidMaker.prototype.volume = function(){
-  // const product = function (${length}, ${width}, ${height}) {
-  //   return ${this.newLength} * ${this.newWidth} * ${this.newHeight}
-  // };
-  return ${this.newLength} * ${this.newWidth} * ${this.newHeight};
+  return (this.newLength * this.newWidth * this.newHeight); 
 };
 
 
@@ -34,7 +31,7 @@ CuboidMaker.prototype.volume = function(){
 */
 
 CuboidMaker.prototype.surfaceArea = function(){
-  return 2 * (${this.newLength} * ${this.newWidth} + ${this.newHeight} + ${this.newWidth} * ${this.newHeight});
+  return (2 * ((this.newLength * this.newWidth) + (this.newLength * this.newHeight) + (this.newWidth * this.newHeight)));
 }
 
 /* == Step 4: Create a new object that uses CuboidMaker ==
@@ -45,7 +42,7 @@ CuboidMaker.prototype.surfaceArea = function(){
 const cuboid = new CuboidMaker({
   length: 4,
   width: 5,
-  height: 5,
+  height: 5
 });
 
 // Test your volume and surfaceArea methods by uncommenting the logs below:
