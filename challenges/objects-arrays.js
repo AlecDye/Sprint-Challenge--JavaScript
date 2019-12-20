@@ -99,8 +99,16 @@ The resulting contact information strings should have a space between the first 
 "Josh josh@example.com"
 
 Log the result of your new array. */
-const contactInfo = [];
-console.log(contactInfo);
+function getNameEmail(graduates, id){
+  const contactInfo = [];
+  for(let i = 0; i < graduates.length; i++){
+    if(graduates[i].id === id){
+      contactInfo.push(graduates[i].first_name + graduates[i].email);
+    }
+  return graduates.sort();
+}
+
+console.log(getNameEmail(graduates));
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
 const unisWithUni = [];
@@ -154,6 +162,9 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
+function processPop(zooAnimals, callback) {
+  return callback(zooAnimals.reduce( (accumulator, population) => accumulator + population, 0))
+}
 const populationTotal = 0;
 console.log(populationTotal);
 
