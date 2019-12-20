@@ -77,7 +77,16 @@ const graduates = [
 /* Request 1: Create a new array called universities that contains all the universities in the graduates array. This will be an array of strings.
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
+function getUniversities(graduates) {
+  let universities = [];
+  for(let i = 0; i < graduates.length - 1; i++){
+    universities.push(graduates[i].university)
+  }
+  //runs a loop on the "graduates" array targeting the university key pairs and pushes them into new Array "universities"
+  return universities;
+}
+
+// ISSUE: "universities is not defined" 
 console.log(universities);
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. This will be an array of strings.
